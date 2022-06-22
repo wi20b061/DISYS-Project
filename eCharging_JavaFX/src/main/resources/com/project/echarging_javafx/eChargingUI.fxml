@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.echarging_javafx.eChargingController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <Label text="Please insert Customer-ID to generate Invoice (PDF):" />
+   <TextField fx:id="input" promptText="customerid" />
+
+    <Label fx:id="message" />
+   <HBox alignment="TOP_CENTER" prefHeight="0.0" prefWidth="277.0">
+      <children>
+          <Button onAction="#onGenerateButtonClick" text="Generate Invoice">
+            <HBox.margin>
+               <Insets right="50.0" />
+            </HBox.margin>
+         </Button>
+         <Hyperlink fx:id="pdfLink" text="Pdf Download" textAlignment="RIGHT" />
+      </children>
+   </HBox>
+</VBox>
