@@ -9,6 +9,12 @@ import java.sql.ResultSet;
 public class Main {
     public static void main(String[] args) {
 
+        // Data Collection Dispatcher:
+            // Starts the data gathering job
+            // Has knowledge about the available stations
+            // Sends a message for every charging station to the StationDataCollector
+            // Sends a message to the DataCollectionReciever, that a new job started
+
         DatabaseService dbService = new DatabaseService();
 
         try {
