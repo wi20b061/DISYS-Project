@@ -1,4 +1,4 @@
-package model;
+package stationDataCollector.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
