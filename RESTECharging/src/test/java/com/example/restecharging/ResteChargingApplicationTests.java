@@ -1,3 +1,4 @@
+/*
 package com.example.restecharging;
 
 import org.junit.jupiter.api.Test;
@@ -11,3 +12,6 @@ class ResteChargingApplicationTests {
     }
 
 }
+
+
+ */

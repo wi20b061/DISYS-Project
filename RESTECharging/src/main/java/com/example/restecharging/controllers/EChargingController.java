@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 public class EChargingController {
@@ -30,13 +31,19 @@ public class EChargingController {
 
     }*/
     @PostMapping(path = "/invoice/{id}", produces = "application/json")
-    public String postUserID(@PathVariable int id){//(@RequestBody final String id){
-        return switch (id){
+    public boolean postUserID(@PathVariable int id){//(@RequestBody final String id){
+        List<Integer> =
+
+
+        return true;
+
+        /*return switch (id){
             case 1 -> "Customer 1";
             case 2 -> "Customer 2";
             default -> throw new ResponseStatusException(HttpStatus.NOT_FOUND);
-        };
+        };*/
     }
+
 
     @GetMapping(path = "/invoice/{id}")
     public String getInvoice(@PathVariable int id){
