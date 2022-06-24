@@ -7,6 +7,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+//test
+
 public class eChargingApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {

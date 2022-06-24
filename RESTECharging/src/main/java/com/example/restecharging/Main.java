@@ -1,21 +1,15 @@
-package com.example.restecharging;
+/*package com.example.restecharging;
 
 import com.example.restecharging.activeMQ.Executor;
-import com.example.restecharging.service.DataGatheringService;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import com.example.restecharging.service.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@SpringBootApplication
-public class ResteChargingApplication {
+public class Main {
     public static final String BROKER_URL = "tcp://localhost:61616";
-    public int id;
 
     public static void main(String[] args) {
-        SpringApplication.run(ResteChargingApplication.class, args);
-
         List<Runnable> services = new ArrayList<>();
 
         // put some call for waiters in the queue
@@ -25,5 +19,4 @@ public class ResteChargingApplication {
         Executor executor = new Executor(services);
         executor.start();
     }
-
-}
+}*/
