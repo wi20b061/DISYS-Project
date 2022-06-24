@@ -2,12 +2,12 @@ package com.example.restecharging.service;
 
 import com.example.restecharging.ResteChargingApplication;
 import com.example.restecharging.activeMQ.abstactservices.ProducerService;
-import com.example.restecharging.controllers.EChargingController;
 
-public class DataGatheringService extends ProducerService{
-    public static final String OUT_QUEUE = "GetStationInformationForCustomer";
+public class NewDataGateringJob extends ProducerService {
+    public static final String OUT_QUEUE = "NewDataGatheringJob";
 
-    public DataGatheringService(String input){
+    public NewDataGateringJob(String input){
         super(input, OUT_QUEUE, ResteChargingApplication.BROKER_URL);
     }
 }
+
