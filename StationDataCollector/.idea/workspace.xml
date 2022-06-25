@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04a5b097-3921-4cf9-ba5f-a2e9a27b8f9f" name="Changes" comment="stationDataCollector almost finished">
-      <change beforePath="$PROJECT_DIR$/../DataCollectionReciever/src/main/java/dataCollectionReceiver/worker/DataCollectionReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DataCollectionReciever/src/main/java/dataCollectionReceiver/worker/DataCollectionReceiver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="04a5b097-3921-4cf9-ba5f-a2e9a27b8f9f" name="Changes" comment="stationDataCollector almost finished" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,7 +77,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="stationDataCollector almost finished" />

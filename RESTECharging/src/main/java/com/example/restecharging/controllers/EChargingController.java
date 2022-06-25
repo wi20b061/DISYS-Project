@@ -40,11 +40,13 @@ public class EChargingController {
         List<Runnable> services = new ArrayList<>();
         //**** for StationDataCollector ****
         //get stationIDs from all available stations
-        //StationGathering gatherIDs = new StationGathering();
-        //List<Integer> stationIDs = gatherIDs.getStationIDs();
-        List<Integer> stationIDs = new ArrayList<>();//this is just for testing until db is working..
-        stationIDs.add(1);
-        stationIDs.add(2);
+        StationGathering gatherIDs = new StationGathering();
+        List<Integer> stationIDs = gatherIDs.getStationIDs();
+        /*without db connection
+            List<Integer> stationIDs = new ArrayList<>();//this is just for testing until db is working..
+            stationIDs.add(1);
+            stationIDs.add(2);
+         */
         // for a dataGeathering message into the queue & provides customerID
         services.add(new DataGatheringService(String.format("%d", customerID)));
 
