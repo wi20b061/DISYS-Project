@@ -9,7 +9,7 @@ import stationDataCollector.worker.StationDataCollector;
 public class StationDataCollectorService extends ConsumerProducerService {
 
     // name of message we need to listen for in queue
-    public static String IN_QUEUE = "NewDataGatheringJob";
+    public static String IN_QUEUE = "GetStationInformationForCustomer";
     public static String OUT_QUEUE = "StationDataForCustomer";
 
     //führt db abfrage durch
@@ -21,7 +21,7 @@ public class StationDataCollectorService extends ConsumerProducerService {
 
     @Override
     protected String execute(String input) {
-        // inqueue timeout brokerurl from constructor
+
         return stationDataCollector.getStationData(input);
     }
 }

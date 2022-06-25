@@ -1,6 +1,6 @@
-package activeMQ.abstactservices;
+package dataCollectionReceiver.activeMQ.abstractservices;
 
-import activeMQ.Consumer;
+import dataCollectionReceiver.activeMQ.Consumer;
 
 public abstract class ConsumerService implements Runnable {
     private final String inQueue;
