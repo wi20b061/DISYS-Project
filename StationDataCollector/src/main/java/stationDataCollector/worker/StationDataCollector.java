@@ -2,7 +2,6 @@ package stationDataCollector.worker;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import com.mysql.cj.xdevapi.JsonString;
 import stationDataCollector.database.DatabaseService;
 import stationDataCollector.model.Charging;
 
