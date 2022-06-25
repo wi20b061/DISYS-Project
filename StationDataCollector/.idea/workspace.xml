@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04a5b097-3921-4cf9-ba5f-a2e9a27b8f9f" name="Changes" comment="stationDataCollector almost finished">
-      <change beforePath="$PROJECT_DIR$/../RESTECharging/src/main/java/com/example/restecharging/controllers/EChargingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RESTECharging/src/main/java/com/example/restecharging/controllers/EChargingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataCollectionReciever/src/main/java/dataCollectionReceiver/worker/DataCollectionReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DataCollectionReciever/src/main/java/dataCollectionReceiver/worker/DataCollectionReceiver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/stationDataCollector/worker/StationDataCollector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stationDataCollector/worker/StationDataCollector.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,9 +24,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
   <component name="ProjectId" id="2B2R7a8PapUrQonoyKJOrCOplP6" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -38,7 +34,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../PizzaRestaurantDemo 2/PizzaRestaurantDemo" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.29057592" />
@@ -52,8 +48,7 @@
       <option name="presentableId" value="Default" />
       <updated>1656102030173</updated>
       <workItem from="1656102035300" duration="4457000" />
-      <workItem from="1656155097885" duration="6569000" />
-      <workItem from="1656178577591" duration="1502000" />
+      <workItem from="1656155097885" duration="7905000" />
     </task>
     <task id="LOCAL-00001" summary="stationDataCollector almost finished">
       <created>1656106512639</created>
@@ -62,7 +57,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656106512639</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="stationDataCollector almost finished">
+      <created>1656178105830</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1656178105830</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -78,6 +80,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="stationDataCollector almost finished" />
