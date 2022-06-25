@@ -18,6 +18,7 @@ public class Main {
         List<Runnable> services = new ArrayList<>();
 
         // as many services as stations ?
+
         services.add(new StationDataCollectorService());
 
 

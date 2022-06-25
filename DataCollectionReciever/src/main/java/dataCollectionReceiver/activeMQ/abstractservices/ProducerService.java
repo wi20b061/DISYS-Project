@@ -1,8 +1,8 @@
-package activeMQ.abstactservices;
+package dataCollectionReceiver.activeMQ.abstractservices;
 
-import activeMQ.Producer;
+import dataCollectionReceiver.activeMQ.Producer;
 
-public class ProducerService implements Runnable {
+public class ProducerService implements Runnable{
     private final String input;
     private final String outQueue;
     private final String brokerUrl;

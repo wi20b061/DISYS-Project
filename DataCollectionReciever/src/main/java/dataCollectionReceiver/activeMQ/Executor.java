@@ -1,6 +1,4 @@
-package activeMQ;
-
-
+package dataCollectionReceiver.activeMQ;
 
 import java.util.List;
 

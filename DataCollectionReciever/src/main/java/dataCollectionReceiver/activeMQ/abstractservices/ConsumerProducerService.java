@@ -1,7 +1,7 @@
-package activeMQ.abstactservices;
+package dataCollectionReceiver.activeMQ.abstractservices;
 
-import activeMQ.Consumer;
-import activeMQ.Producer;
+import dataCollectionReceiver.activeMQ.Consumer;
+import dataCollectionReceiver.activeMQ.Producer;
 
 public abstract class ConsumerProducerService implements Runnable {
 
@@ -32,3 +32,5 @@ public abstract class ConsumerProducerService implements Runnable {
 
     protected abstract String execute(String input);
 }
+
+

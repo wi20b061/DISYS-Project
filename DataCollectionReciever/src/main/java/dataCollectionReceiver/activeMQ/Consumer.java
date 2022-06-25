@@ -1,4 +1,4 @@
-package activeMQ;
+package dataCollectionReceiver.activeMQ;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.apache.activemq.ActiveMQPrefetchPolicy;
