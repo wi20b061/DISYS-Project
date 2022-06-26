@@ -14,10 +14,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Random;
+import java.io.FileNotFoundException;
+import java.util.*;
 
 @RestController
 public class EChargingController {
@@ -36,8 +34,8 @@ public class EChargingController {
     public String postUserID(@PathVariable int customerID){
         //generate new random jobID
         Random r = new Random();
-        String invoiceID = String.format("%4d", Integer.valueOf(r.nextInt(10001)));
-
+        //String invoiceID = String.format("%4d", Integer.valueOf(r.nextInt(10001)));
+        String invoiceID = UUID.randomUUID().toString();
         List<Runnable> services = new ArrayList<>();
         //**** for StationDataCollector ****
         //get stationIDs from all available stations
@@ -55,7 +53,7 @@ public class EChargingController {
         //Convert List to JSON String
         String collectorjson = null;
         try {
-            // ObjectMapper to convert array of objects to JSON(resource https://makeinjava.com/convert-array-objects-json-jackson-objectmapper/)
+            // ObjectMapper to convert object to JSON(resource https://makeinjava.com/convert-array-objects-json-jackson-objectmapper/)
             collectorjson = new ObjectMapper().writeValueAsString(object);
         } catch (JsonProcessingException e) {
             e.printStackTrace();
@@ -87,20 +85,38 @@ public class EChargingController {
 
 
     @GetMapping(path = "/invoice/{invoiceID}")
-    public String getInvoice(@PathVariable int invoiceID){
-        //watch time and wait for 1 minute, if no invoice-file was found in that time return "not found"
-        long startTime = System.currentTimeMillis();
-        while(System.currentTimeMillis() < startTime + 60000){
+    public String getInvoice(@PathVariable String invoiceID){
+        //try to find invoice 10 times - every 5 seconds, if no invoice-file was found return "not found"
+        for(int i=0; i<10;i++){
             //search for invoice at specified invoiceID-path (invoiceID=jobID)
+            try {
+                File invoice = new File("DISYS_Projekt/invoices/" + invoiceID + ".pdf");
+                //File invoice = new File("C:/Users/Fiona/IdeaProjects/DISYS_Projekt/invoices/test.pdf"); //TESTING!
+                Scanner myReader = new Scanner(invoice);
+                //return path if file exists
+                return "DISYS_Projekt/invoices/" + invoiceID + ".pdf";
+                //return "C:/Users/Fiona/IdeaProjects/DISYS_Projekt/invoices/test.pdf"; //TESTING!
+            } catch (Exception e) {
+                System.out.println("Invoice-pdf not found");
+            }
+            /*
             File invoice = new File("DISYS_Projekt/invoices/" + invoiceID);
             if (invoice.exists()) {
                 return "DISYS_Projekt/invoices/" + invoiceID;
+            }*/
+            try {
+                System.out.println("5 Wait  seconds");
+                Thread.sleep(5000);
+                System.out.println("5 seconds are over");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         }
-        return "no invoice found";
+        throw new ResponseStatusException(HttpStatus.NOT_FOUND);//404: "no invoice found";
        /* ConsumeInvoiceService invoiceService  = new ConsumeInvoiceService();
         //the path of the invoice-pdf is sent back to the Frontend
         return invoiceService.execute();*/
+
     }
 
 
