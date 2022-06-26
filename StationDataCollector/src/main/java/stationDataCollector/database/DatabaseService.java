@@ -9,6 +9,6 @@ public class DatabaseService {
 
 
     public Connection connect() throws SQLException {
-        return DriverManager.getConnection(url, "root", "#Schubidu99");
+        return DriverManager.getConnection(url, "root", "admin");
     }
 }

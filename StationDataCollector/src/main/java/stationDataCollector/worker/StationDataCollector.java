@@ -17,7 +17,7 @@ public class StationDataCollector {
     //input is JSON with all stationIDs and the customerID -> {"customerID": 1, "stationIDs": [1, 2]}
     public String getStationData(String input){
 
-
+        System.out.println("test in stationdatacollector");
 
         // ObjectMapper to convert array of objects to JSON(resource https://makeinjava.com/convert-array-objects-json-jackson-objectmapper/)
         ObjectMapper objectMapper = new ObjectMapper();
@@ -69,7 +69,7 @@ public class StationDataCollector {
             connection.close();
             //Convert List to JSON String
             JSONArray = objectMapper.writeValueAsString(stationData);
-
+            System.out.println(JSONArray);
 
         }catch (Exception e){
             e.printStackTrace();
