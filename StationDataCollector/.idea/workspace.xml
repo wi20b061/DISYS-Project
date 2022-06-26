@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04a5b097-3921-4cf9-ba5f-a2e9a27b8f9f" name="Changes" comment="stationDataCollector almost finished" />
+    <list default="true" id="04a5b097-3921-4cf9-ba5f-a2e9a27b8f9f" name="Changes" comment="stationDataCollector almost finished">
+      <change afterPath="$PROJECT_DIR$/../RESTECharging/src/main/java/com/example/restecharging/model/CollectorObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RESTECharging/src/main/java/com/example/restecharging/ResteChargingApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RESTECharging/src/main/java/com/example/restecharging/ResteChargingApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RESTECharging/src/main/java/com/example/restecharging/controllers/EChargingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RESTECharging/src/main/java/com/example/restecharging/controllers/EChargingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RESTECharging/src/main/java/com/example/restecharging/service/DataGatheringService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RESTECharging/src/main/java/com/example/restecharging/service/DataGatheringService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eCharging_JavaFX/src/main/java/com/project/echarging_javafx/eChargingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../eCharging_JavaFX/src/main/java/com/project/echarging_javafx/eChargingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eCharging_JavaFX/src/main/resources/com/project/echarging_javafx/eChargingUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../eCharging_JavaFX/src/main/resources/com/project/echarging_javafx/eChargingUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eCharging_JavaFX/target/classes/com/project/echarging_javafx/eChargingUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../eCharging_JavaFX/target/classes/com/project/echarging_javafx/eChargingUI.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,6 +30,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2B2R7a8PapUrQonoyKJOrCOplP6" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -31,7 +43,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../PizzaRestaurantDemo 2/PizzaRestaurantDemo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.29057592" />
@@ -46,6 +58,7 @@
       <updated>1656102030173</updated>
       <workItem from="1656102035300" duration="4457000" />
       <workItem from="1656155097885" duration="7905000" />
+      <workItem from="1656244805832" duration="17000" />
     </task>
     <task id="LOCAL-00001" summary="stationDataCollector almost finished">
       <created>1656106512639</created>

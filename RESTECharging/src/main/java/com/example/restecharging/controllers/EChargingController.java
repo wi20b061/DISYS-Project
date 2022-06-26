@@ -3,6 +3,7 @@ package com.example.restecharging.controllers;
 
 import com.example.restecharging.activeMQ.Executor;
 import com.example.restecharging.database.StationGathering;
+import com.example.restecharging.model.CollectorObject;
 import com.example.restecharging.service.DataGatheringService;
 import com.example.restecharging.service.NewDataGateringJob;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -32,7 +33,7 @@ public class EChargingController {
 
     //start of getting a invoice for the specific customer
     @PostMapping(path = "/invoice/{customerID}", produces = "application/json")
-    public boolean postUserID(@PathVariable int customerID){
+    public String postUserID(@PathVariable int customerID){
         //generate new random jobID
         Random r = new Random();
         String invoiceID = String.format("%4d", Integer.valueOf(r.nextInt(10001)));
@@ -48,29 +49,40 @@ public class EChargingController {
             stationIDs.add(2);
          */
         // for a dataGeathering message into the queue & provides customerID
-        services.add(new DataGatheringService(String.format("%d", customerID)));
+        HashMap<String, String> collectorhashmap = new HashMap<>();
+        CollectorObject object = new CollectorObject(customerID, stationIDs);
+
+        //Convert List to JSON String
+        String collectorjson = null;
+        try {
+            // ObjectMapper to convert array of objects to JSON(resource https://makeinjava.com/convert-array-objects-json-jackson-objectmapper/)
+            collectorjson = new ObjectMapper().writeValueAsString(object);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        services.add(new DataGatheringService(collectorjson));
 
         //**** for DataCollectionReceiver ****
         //add service that will inform DataCollectionReceiver about the new invoice-job with
         //the amount of station-information that will be sent from the StationDataCollector
-        HashMap<String, String> hashmap = new HashMap<>();
-        hashmap.put("stationQty", Integer.toString(stationIDs.size())); //{ "stationQty : 3",
-        hashmap.put("invoiceID", invoiceID); //"invoiceID" : "2353" }
+        HashMap<String, String> receiverhashmap = new HashMap<>();
+        receiverhashmap.put("stationQty", Integer.toString(stationIDs.size())); //{ "stationQty : 3",
+        receiverhashmap.put("invoiceID", invoiceID); //"invoiceID" : "2353" }
         //Convert List to JSON String
-        String json = null;
+        String receiverjson = null;
         try {
             // ObjectMapper to convert array of objects to JSON(resource https://makeinjava.com/convert-array-objects-json-jackson-objectmapper/)
-            json = new ObjectMapper().writeValueAsString(hashmap);
+            receiverjson = new ObjectMapper().writeValueAsString(receiverhashmap);
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
-        services.add(new NewDataGateringJob(json));
+        services.add(new NewDataGateringJob(receiverjson));
 
         // run the whole application
         Executor executor = new Executor(services);
         executor.start();
         //return true to frontend to signalize that the start of the process was successful
-        return true;
+        return invoiceID;
     }
 
 

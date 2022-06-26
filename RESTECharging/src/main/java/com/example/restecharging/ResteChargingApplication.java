@@ -1,15 +1,7 @@
 package com.example.restecharging;
 
-import com.example.restecharging.database.DatabaseService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.List;
-
 
 @SpringBootApplication
 public class ResteChargingApplication {

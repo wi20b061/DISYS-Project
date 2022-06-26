@@ -1,6 +1,7 @@
 package com.project.echarging_javafx;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
@@ -12,42 +13,67 @@ import java.net.http.HttpResponse;
 
 public class eChargingController {
     @FXML
-    private Label welcomeText;
-
-    @FXML
     private TextField input;
     @FXML
     private Label message;
+    @FXML
+    private Hyperlink pdfLink;
 
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+    protected void onPdfLinkClick(){
+
     }
 
     @FXML
     protected void onGenerateButtonClick(){
         String url = "http://localhost:8080/invoice/";
+        String invoiceID = "";
 
-        if(!input.getText().isBlank()){
-
-            HttpRequest request = HttpRequest.newBuilder()
+        //if a customerID was typed in
+        if(!input.getText().isBlank()) {
+            //send a post request to Springboot-Server to start the invoice-process for the specific customer
+            HttpRequest postrequest = HttpRequest.newBuilder()
                     .uri(URI.create(url + input.getText()))
                     .POST(HttpRequest.BodyPublishers.ofString(input.getText()))
                     .build();
 
             try {
-                HttpResponse<String> response = HttpClient.newHttpClient()
-                        .send(request, HttpResponse.BodyHandlers.ofString());
-                if (response.statusCode() == 200) {
+                //as a response the new invoiceID will be recieved
+                HttpResponse<String> postresponse = HttpClient.newHttpClient()
+                        .send(postrequest, HttpResponse.BodyHandlers.ofString());
+                if (postresponse.statusCode() == 200) {
                     //TO DO: return invoice PDF with download-link and creation time
-                    message.setText(response.body());
+                    //message.setText(response.body());
+                    invoiceID = postresponse.body();
+                    message.setText("Invoice will be generated...");
                 }
-                if (response.statusCode() == 404) {
+                if (postresponse.statusCode() == 404) {
                     message.setText("ID not found");
                 }
             } catch (IOException | InterruptedException e) {
                 e.printStackTrace();
             }
+    /*
+            //get invoicePath of new invoice -> try to find get an answer every 2 seconds
+            HttpRequest getrequest = HttpRequest.newBuilder()
+                    .uri(URI.create(url + invoiceID))
+                    .GET()
+                    .build();
+            try{
+                HttpResponse<String> getresponse = HttpClient.newHttpClient()
+                        .send(getrequest, HttpResponse.BodyHandlers.ofString());
+                if(getresponse.statusCode() == 200){
+                    pdfLink.setVisible(true);
+                    pdfLink.setText(getresponse.body());
+                }
+                if(getresponse.statusCode() == 404){
+                    System.out.println("No Invoice found");
+                }
+            }catch(IOException | InterruptedException e){
+                e.printStackTrace();
+            }
+
+     */
         }
     }
 }
