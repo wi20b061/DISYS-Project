@@ -1,11 +1,16 @@
 package stationDataCollector;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.google.gson.Gson;
 import stationDataCollector.activeMQ.Executor;
 import stationDataCollector.database.DatabaseService;
+import stationDataCollector.model.Charging;
 import stationDataCollector.service.StationDataCollectorService;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.Array;
+import java.sql.Timestamp;
+import java.util.*;
 
 public class Main {
     public static final String BROKER_URL = "tcp://localhost:61616";
@@ -24,6 +29,47 @@ public class Main {
 
         Executor executor = new Executor(services);
         executor.start();
+
+
+        /*
+        HashMap<String, Charging> chargings = new HashMap<>();
+
+        chargings.put("object1", new Charging(1, 1, 1, new java.sql.Timestamp(Calendar.getInstance().getTime().getTime())));
+        chargings.put("object2", new Charging(2, 2, 2, new java.sql.Timestamp(Calendar.getInstance().getTime().getTime())));
+
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
+
+        String JSONArray = "";
+        try{
+            JSONArray = objectMapper.writeValueAsString(chargings);
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        //System.out.println(JSONArray);
+
+        //Map jsonJavaRootObject = new Gson().fromJson(JSONArray, Map.class);
+
+        //System.out.println(jsonJavaRootObject.get("object2"));
+
+
+
+        ArrayList<Integer> testis = new ArrayList<>();
+        testis.add(1);
+        testis.add(2);
+        String JsonTest = "";
+        try {
+            JsonTest = objectMapper.writeValueAsString(testis);
+            System.out.println(JsonTest);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        ArrayList<Integer> jsonJavaRootObject = new Gson().fromJson(JsonTest, ArrayList.class);
+        System.out.println(jsonJavaRootObject);*/
 
     }
 }
