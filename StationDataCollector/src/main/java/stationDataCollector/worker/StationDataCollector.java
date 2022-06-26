@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class StationDataCollector {
-    //input is JSON with all stationIDs and the customerID
+    //input is JSON with all stationIDs and the customerID -> {"customerID": 1, "stationIDs": [1, 2]}
     public String getStationData(String input){
 
 
