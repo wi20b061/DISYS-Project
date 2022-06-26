@@ -8,8 +8,7 @@ import stationDataCollector.database.DatabaseService;
 import stationDataCollector.model.Charging;
 import stationDataCollector.service.StationDataCollectorService;
 
-import java.sql.Array;
-import java.sql.Timestamp;
+import java.sql.*;
 import java.util.*;
 
 public class Main {
@@ -70,6 +69,26 @@ public class Main {
 
         ArrayList<Integer> jsonJavaRootObject = new Gson().fromJson(JsonTest, ArrayList.class);
         System.out.println(jsonJavaRootObject);*/
+        /*
+        DatabaseService dbService = new DatabaseService();
+        ArrayList<Integer> stationData = new ArrayList<>();
+        try{
+            Connection connection = dbService.connect();
+            String queryRead = "SELECT idcharging FROM charging";
+            PreparedStatement preparedStatementRead = connection.prepareStatement(queryRead);
 
+
+            ResultSet resultSet = preparedStatementRead.executeQuery();
+
+            //while loop to create list of objects from db results
+                while(resultSet.next()) {
+
+
+                    stationData.add(resultSet.getInt(1));
+                    System.out.println(stationData);
+                }
+            }catch (Exception e){
+            e.printStackTrace();
+        }*/
     }
 }
