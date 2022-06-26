@@ -46,7 +46,7 @@ public class StationDataCollector {
             for(int i = 0; i < stationIDs.size(); i++){
                 String queryRead = "SELECT * FROM charging WHERE idstation=? AND idcustomer=?";
                 PreparedStatement preparedStatementRead = connection.prepareStatement(queryRead);
-                preparedStatementRead.setInt(1, i); //stationid
+                preparedStatementRead.setInt(1, stationIDs.get(i)); //stationid
                 preparedStatementRead.setInt(2, idCustomer);
 
                 ResultSet resultSet = preparedStatementRead.executeQuery();
