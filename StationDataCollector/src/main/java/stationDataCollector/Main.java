@@ -1,15 +1,10 @@
 package stationDataCollector;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
-import com.google.gson.Gson;
-import stationDataCollector.activeMQ.Executor;
-import stationDataCollector.database.DatabaseService;
-import stationDataCollector.model.Charging;
-import stationDataCollector.service.StationDataCollectorService;
 
-import java.sql.Array;
-import java.sql.Timestamp;
+import stationDataCollector.activeMQ.Executor;
+
+import stationDataCollector.service.StationCounterService;
+
 import java.util.*;
 
 public class Main {
@@ -24,7 +19,7 @@ public class Main {
 
         // as many services as stations ?
 
-        services.add(new StationDataCollectorService());
+        services.add(new StationCounterService());
 
 
         Executor executor = new Executor(services);
@@ -70,6 +65,26 @@ public class Main {
 
         ArrayList<Integer> jsonJavaRootObject = new Gson().fromJson(JsonTest, ArrayList.class);
         System.out.println(jsonJavaRootObject);*/
+        /*
+        DatabaseService dbService = new DatabaseService();
+        ArrayList<Integer> stationData = new ArrayList<>();
+        try{
+            Connection connection = dbService.connect();
+            String queryRead = "SELECT idcharging FROM charging";
+            PreparedStatement preparedStatementRead = connection.prepareStatement(queryRead);
 
+
+            ResultSet resultSet = preparedStatementRead.executeQuery();
+
+            //while loop to create list of objects from db results
+                while(resultSet.next()) {
+
+
+                    stationData.add(resultSet.getInt(1));
+                    System.out.println(stationData);
+                }
+            }catch (Exception e){
+            e.printStackTrace();
+        }*/
     }
 }

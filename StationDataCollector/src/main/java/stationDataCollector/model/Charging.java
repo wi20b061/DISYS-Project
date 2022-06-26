@@ -12,8 +12,10 @@ import java.sql.Timestamp;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Charging {
+    private int idcharging;
     private int idstation;
     private int idcustomer;
     private int kwh;
     private Timestamp datetime;
+    private boolean usedForInvoice;
 }

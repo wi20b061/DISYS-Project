@@ -3,31 +3,26 @@ package stationDataCollector.worker;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.stream.JsonReader;
+import stationDataCollector.activeMQ.Executor;
 import stationDataCollector.database.DatabaseService;
 import stationDataCollector.model.Charging;
+import stationDataCollector.service.StationCounterService;
+import stationDataCollector.service.StationDataCollectorService;
 
-import java.lang.reflect.Array;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-public class StationDataCollector {
-    //input is JSON with all stationIDs and the customerID -> {"customerID": 1, "stationIDs": [1, 2]}
-    public String getStationData(String input){
-
+public class StationCounter {
+    public void getDataForStations(String input){
         // ObjectMapper to convert array of objects to JSON(resource https://makeinjava.com/convert-array-objects-json-jackson-objectmapper/)
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
 
-        ArrayList<Charging> stationData = new ArrayList<Charging>();
+
 
         //Get data from db for specific customer and station
 
@@ -56,6 +51,9 @@ public class StationDataCollector {
                 stationIDsInt.add(stationIDs.get(j).intValue());
             }
 
+            List<Runnable> services = new ArrayList<>();
+
+
             for(int i = 0; i < stationIDsInt.size(); i++){
                 String queryRead = "SELECT * FROM charging WHERE idstation=? AND idcustomer=?";
                 PreparedStatement preparedStatementRead = connection.prepareStatement(queryRead);
@@ -65,7 +63,7 @@ public class StationDataCollector {
 
                 ResultSet resultSet = preparedStatementRead.executeQuery();
                 stationResults.add(resultSet);
-
+                ArrayList<Charging> stationData = new ArrayList<Charging>();
                 //while loop to create list of objects from db results
                 while(resultSet.next()){
                     Charging charging = new Charging(
@@ -81,19 +79,31 @@ public class StationDataCollector {
                     stationData.add(charging);
 
                 }
+                //Convert List to JSON String
+                System.out.println(stationData);
+                JSONArray = objectMapper.writeValueAsString(stationData);
+                services.add(new StationDataCollectorService(JSONArray));
 
             }
-            System.out.println(stationResults);
 
             connection.close();
-            //Convert List to JSON String
-            JSONArray = objectMapper.writeValueAsString(stationData);
-
+            Executor executor = new Executor(services);
+            executor.start();
 
         }catch (Exception e){
             e.printStackTrace();
         }
 
-        return JSONArray;
+
+        /*
+        List<Runnable> services = new ArrayList<>();
+
+        //hier StationDataServiceAufrufen: für jede Station soll eine eigene message in die queue geschickt werden
+        for(int i = 0; i <stationIDsInt.size(); i++){
+            services.add(new StationDataCollectorService());
+        }
+        Executor executor = new Executor(services);
+        executor.start();*/
+
     }
 }
