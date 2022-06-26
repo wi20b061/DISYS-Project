@@ -6,6 +6,9 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+import java.io.File;
+import java.awt.Desktop;
+import java.io.*;
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -25,8 +28,25 @@ public class eChargingController {
     private String url = "http://localhost:8080/invoice/";
     @FXML
     protected void onPdfLinkClick(){
-
+        try
+        {
+            //constructor of file class having file as argument
+            File file = new File(pdfLink.getText());
+            if(!Desktop.isDesktopSupported())//check if Desktop is supported by Platform or not
+            {
+                System.out.println("not supported");
+                return;
+            }
+            Desktop desktop = Desktop.getDesktop();
+            if(file.exists())         //checks file exists or not
+                desktop.open(file);              //opens the specified file
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
     }
+
 
     @FXML
     protected void onGenerateButtonClick(){
@@ -47,7 +67,6 @@ public class eChargingController {
                 if (postresponse.statusCode() == 200) {
                     //TO DO: return invoice PDF with download-link and creation time
                     //message.setText(response.body());
-                    System.out.println("test");
                     invoiceID = postresponse.body();
                     message.setText("Invoice will be generated...");
                 }
@@ -80,6 +99,7 @@ public class eChargingController {
                     .send(getrequest, HttpResponse.BodyHandlers.ofString());
             if(getresponse.statusCode() == 200){
                 Platform.runLater(() -> {
+                    message.setText("Open Invoice-PDF with link below:");
                     pdfLink.setVisible(true);
                     pdfLink.setText(getresponse.body());
                 });
