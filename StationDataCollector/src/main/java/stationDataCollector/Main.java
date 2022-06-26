@@ -1,14 +1,10 @@
 package stationDataCollector;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
-import com.google.gson.Gson;
-import stationDataCollector.activeMQ.Executor;
-import stationDataCollector.database.DatabaseService;
-import stationDataCollector.model.Charging;
-import stationDataCollector.service.StationDataCollectorService;
 
-import java.sql.*;
+import stationDataCollector.activeMQ.Executor;
+
+import stationDataCollector.service.StationCounterService;
+
 import java.util.*;
 
 public class Main {
@@ -23,7 +19,7 @@ public class Main {
 
         // as many services as stations ?
 
-        services.add(new StationDataCollectorService());
+        services.add(new StationCounterService());
 
 
         Executor executor = new Executor(services);
