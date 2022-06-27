@@ -44,7 +44,7 @@ public class PdfGenerator {
         try
         {
             //generate a PDF at the specified location
-            PdfWriter writer = PdfWriter.getInstance(doc, new FileOutputStream("C:\\Users\\Fiona\\IdeaProjects\\DISYS_Projekt\\invoices\\test.pdf"));
+            PdfWriter writer = PdfWriter.getInstance(doc, new FileOutputStream("C:\\Users\\Fiona\\IdeaProjects\\DISYS_Projekt\\invoices\\" + invoiceID +".pdf"));
             System.out.println("PDF created.");
             //opens the PDF
             doc.open();

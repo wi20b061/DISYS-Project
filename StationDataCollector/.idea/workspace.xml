@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04a5b097-3921-4cf9-ba5f-a2e9a27b8f9f" name="Changes" comment="stationDataCollector really finished this time">
-      <change beforePath="$PROJECT_DIR$/../DataCollectionReciever/src/main/java/dataCollectionReceiver/activeMQ/abstractservices/ConsumerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DataCollectionReciever/src/main/java/dataCollectionReceiver/activeMQ/abstractservices/ConsumerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DataCollectionReciever/src/main/java/dataCollectionReceiver/service/DataCollectionCreatorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DataCollectionReciever/src/main/java/dataCollectionReceiver/service/DataCollectionCreatorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DataCollectionReciever/src/main/java/dataCollectionReceiver/service/DataCollectionProducerService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DataCollectionReciever/src/main/java/dataCollectionReceiver/service/DataCollectionReceiverService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DataCollectionReciever/src/main/java/dataCollectionReceiver/service/DataCollectionReceiverService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DataCollectionReciever/src/main/java/dataCollectionReceiver/worker/DataCollectionCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DataCollectionReciever/src/main/java/dataCollectionReceiver/worker/DataCollectionCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/stationDataCollector/worker/StationCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stationDataCollector/worker/StationCounter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PdfGenerator/src/main/java/pdfgenerator/worker/PdfGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PdfGenerator/src/main/java/pdfgenerator/worker/PdfGenerator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +121,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="stationDataCollector almost finished" />
