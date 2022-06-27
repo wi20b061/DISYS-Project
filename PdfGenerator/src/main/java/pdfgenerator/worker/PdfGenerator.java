@@ -35,15 +35,13 @@ public class PdfGenerator {
         String zip = customer.getZip();
         String country = customer.getCountry();
         String invoiceID = customerDataCollection.getInvoiceID();
-        ArrayList<Charging> allChargings = customerDataCollection.getChargingData();
+        ArrayList<Charging> chargingList = customerDataCollection.getChargingData();
 
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
         LocalDateTime now = LocalDateTime.now();
         String invoiceDate = dtf.format(now);
 
-        List<Charging> chargingList = new ArrayList<>();
-        chargingList.add(new Charging(1,1,1,600, "22-01-2023" , false));
-        chargingList.add(new Charging(2,3,1,600, "22-01-2023" , false));
+
         //created PDF document instance
         Document doc = new Document();
         try

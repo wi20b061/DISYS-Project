@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04a5b097-3921-4cf9-ba5f-a2e9a27b8f9f" name="Changes" comment="stationDataCollector really finished this time">
-      <change afterPath="$PROJECT_DIR$/../PdfGenerator/src/main/java/pdfgenerator/model/CustomerDataCollection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PdfGenerator/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PdfGenerator/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PdfGenerator/src/main/java/pdfgenerator/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PdfGenerator/src/main/java/pdfgenerator/model/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PdfGenerator/src/main/java/pdfgenerator/service/PdfGeneratorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PdfGenerator/src/main/java/pdfgenerator/service/PdfGeneratorService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PdfGenerator/src/main/java/pdfgenerator/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PdfGenerator/src/main/java/pdfgenerator/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PdfGenerator/src/main/java/pdfgenerator/worker/PdfGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PdfGenerator/src/main/java/pdfgenerator/worker/PdfGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +69,7 @@
       <updated>1656102030173</updated>
       <workItem from="1656102035300" duration="4457000" />
       <workItem from="1656155097885" duration="7905000" />
-      <workItem from="1656322775060" duration="19450000" />
+      <workItem from="1656322775060" duration="19765000" />
     </task>
     <task id="LOCAL-00001" summary="stationDataCollector almost finished">
       <created>1656106512639</created>
