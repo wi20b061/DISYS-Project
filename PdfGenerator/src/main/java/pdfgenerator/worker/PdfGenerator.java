@@ -22,6 +22,8 @@ import java.util.List;
 
 public class PdfGenerator {
     public void generatePdf(String input){
+        //create pdf with data, safe it to file system
+        //created PDF document instance
         //generate Testdata
         String fname = "Fiona";
         String lname = "Doe";
@@ -37,14 +39,13 @@ public class PdfGenerator {
         List<Charging> chargingList = new ArrayList<>();
         chargingList.add(new Charging(1,1,1,600, "22-01-2023" , false));
         chargingList.add(new Charging(2,3,1,600, "22-01-2023" , false));
-
-
         //created PDF document instance
         Document doc = new Document();
         try
         {
             //generate a PDF at the specified location
             PdfWriter writer = PdfWriter.getInstance(doc, new FileOutputStream("C:\\Users\\Fiona\\IdeaProjects\\DISYS_Projekt\\invoices\\" + invoiceID +".pdf"));
+            System.out.println("PDF created.");
             //opens the PDF
             doc.open();
             //adding customer information
@@ -60,7 +61,6 @@ public class PdfGenerator {
                 doc.add(new Paragraph(String.format("|%20d%s%24d%s%12d%s%20s|", i,"|", charging.getIdstation(),"|", charging.getKwh(),"|", charging.getDatetime())));
                 i++;
             }
-            System.out.println("PDF created.");
             //close the PDF file
             doc.close();
             //closes the writer

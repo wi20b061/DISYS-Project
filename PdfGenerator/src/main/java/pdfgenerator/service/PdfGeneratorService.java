@@ -14,7 +14,6 @@ public class PdfGeneratorService extends ConsumerService {
     }
     protected void execute(String input) {
 
-
-        pdfGenerator.generatePdf(input);
+        pdfGenerator.generatePdf(fname, lname, address, zip, country, invoiceID,);
     }
 }
