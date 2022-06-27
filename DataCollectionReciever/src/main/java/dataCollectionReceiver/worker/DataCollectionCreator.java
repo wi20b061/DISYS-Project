@@ -4,11 +4,14 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import dataCollectionReceiver.Main;
 import dataCollectionReceiver.activeMQ.Consumer;
 import dataCollectionReceiver.activeMQ.Executor;
 import dataCollectionReceiver.database.DatabaseService;
 import dataCollectionReceiver.model.Charging;
+import dataCollectionReceiver.model.Customer;
+import dataCollectionReceiver.model.CustomerDataCollection;
 import dataCollectionReceiver.service.DataCollectionCreatorService;
 import dataCollectionReceiver.service.DataCollectionReceiverService;
 
@@ -28,8 +31,9 @@ public class DataCollectionCreator {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
         DatabaseService dbService = new DatabaseService();
-        ArrayList<String> queueStationDataInput = new ArrayList<>();
-
+        List<Charging> queueStationDataInput = new ArrayList<>();
+        CustomerDataCollection customerDataCollection = new CustomerDataCollection();
+        String jsonstring = "";
         try {
             Connection connection = dbService.connect();
 
@@ -40,34 +44,44 @@ public class DataCollectionCreator {
             String customerID = (String)jsonJavaRootObject.get("customerID");
             String invoiceID = (String)jsonJavaRootObject.get("invoiceID");
 
+
+            ArrayList<Charging> allChargings = new ArrayList<>();
+
+            for(int i = 0; i < Integer.parseInt(stationCount); i++){
+
+                DataCollectionCreatorService creatorService = new DataCollectionCreatorService();
+                queueStationDataInput = creatorService.execute();
+                allChargings.addAll(queueStationDataInput);
+
+            }
+
             //get customer information from db
             String queryRead = "SELECT * FROM customer WHERE idcustomer=?";
             PreparedStatement preparedStatementRead = connection.prepareStatement(queryRead);
             preparedStatementRead.setInt(1, Integer.parseInt(customerID));
             ResultSet resultSet = preparedStatementRead.executeQuery();
 
-            // we get an array with objects/JSonStrings
-            String[] jsonArray = new String[Integer.parseInt(stationCount)];
-            //get messages from queue with the customerStation Data
-            for(int i = 0; i < jsonArray.length; i++){
+            Customer customer = new Customer();
 
-                DataCollectionCreatorService creatorService = new DataCollectionCreatorService();
-                //queueStationDataInput.add(creatorService.execute());
-                //jsonArray[i] = creatorService.execute();
-                String chargings =  creatorService.execute();
-                System.out.println(chargings);
+            while(resultSet.next()){
+                customer.setIdcustomer(resultSet.getString(1));
+                customer.setFname(resultSet.getString(2));
+                customer.setLname(resultSet.getString(3));
+                customer.setAddress(resultSet.getString(4));
+                customer.setZip(resultSet.getString(5));
+                customer.setCountry(resultSet.getString(6));
             }
 
+            customerDataCollection.setCustomer(customer);
+            customerDataCollection.setInvoiceID(invoiceID);
+            customerDataCollection.setChargingData(allChargings);
 
-            //System.out.println(queueStationDataInput.get(0));
-            //System.out.println(queueStationDataInput.get(1));
-            //System.out.println(queueStationDataInput.get(2));
-
+            jsonstring = objectMapper.writeValueAsString(customerDataCollection);
 
         }catch (Exception e){
             e.printStackTrace();
         }
 
-        return "pdfPath for userDataCollection";
+        return jsonstring;
     }
 }

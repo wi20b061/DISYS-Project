@@ -6,18 +6,14 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class CustomerDataCollection {
-    private String customerID;
-    private String fname;
-    private String lname;
-    private String address;
-    private String zip;
-    private String country;
+    private Customer customer;
     private String invoiceID;
-    private ArrayList<Charging> chargingData = new ArrayList<>();
+    private List<Charging> chargingData = new ArrayList<>();
 }

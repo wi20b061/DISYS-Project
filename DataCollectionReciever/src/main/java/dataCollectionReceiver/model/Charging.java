@@ -16,6 +16,6 @@ public class Charging {
     private int idstation;
     private int idcustomer;
     private int kwh;
-    private Timestamp datetime;
+    private String datetime;
     private boolean usedForInvoice;
 }
