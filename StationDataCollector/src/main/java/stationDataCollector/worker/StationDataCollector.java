@@ -57,11 +57,19 @@ public class StationDataCollector {
             }
 
             for(int i = 0; i < stationIDsInt.size(); i++){
-                String queryRead = "SELECT * FROM charging WHERE idstation=? AND idcustomer=?";
+                String queryRead = "SELECT * FROM charging WHERE idstation=? AND idcustomer=? AND usedForInvoice=?";
                 PreparedStatement preparedStatementRead = connection.prepareStatement(queryRead);
                 System.out.println(stationIDsInt.get(i));
                 preparedStatementRead.setInt(1, stationIDsInt.get(i));
                 preparedStatementRead.setInt(2, idCustomer);
+                preparedStatementRead.setInt(3, 1);
+
+                // charging isInInvoice auf 1 setzen
+                String queryUpdate = "UPDATE charging SET usedForInvoice=1 WHERE idcustomer=? AND idstation=? ";
+                PreparedStatement preparedStatementUpdate = connection.prepareStatement(queryUpdate);
+
+                preparedStatementUpdate.setInt(1, stationIDsInt.get(i));
+                preparedStatementUpdate.setInt(2, idCustomer);
 
                 ResultSet resultSet = preparedStatementRead.executeQuery();
                 stationResults.add(resultSet);
@@ -88,6 +96,8 @@ public class StationDataCollector {
             connection.close();
             //Convert List to JSON String
             JSONArray = objectMapper.writeValueAsString(stationData);
+
+
 
 
         }catch (Exception e){

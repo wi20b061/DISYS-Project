@@ -78,6 +78,10 @@ public class DataCollectionCreator {
 
             jsonstring = objectMapper.writeValueAsString(customerDataCollection);
 
+
+
+
+
         }catch (Exception e){
             e.printStackTrace();
         }
