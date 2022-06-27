@@ -3,6 +3,7 @@ package stationDataCollector.worker;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import stationDataCollector.activeMQ.Executor;
 import stationDataCollector.database.DatabaseService;
 import stationDataCollector.model.Charging;
@@ -28,7 +29,7 @@ public class StationCounter {
         //Get data from db for specific customer and station
 
         DatabaseService dbService = new DatabaseService();
-        String JSONArray = "";
+        //String JSONArray = "";
 
         try {
 
@@ -53,7 +54,10 @@ public class StationCounter {
             }
 
             List<Runnable> services = new ArrayList<>();
+            GsonBuilder gsonBuilder = new GsonBuilder();
+            Gson gson = gsonBuilder.create();
 
+            String JSONObject = "";
 
             for(int i = 0; i < stationIDsInt.size(); i++){
                 String queryRead = "SELECT * FROM charging WHERE idstation=? AND idcustomer=?";
@@ -64,7 +68,7 @@ public class StationCounter {
 
                 ResultSet resultSet = preparedStatementRead.executeQuery();
                 stationResults.add(resultSet);
-                ArrayList<Charging> stationData = new ArrayList<Charging>();
+                List<Charging> stationData = new ArrayList<Charging>();
                 //while loop to create list of objects from db results
                 while(resultSet.next()){
                     Charging charging = new Charging(
@@ -81,11 +85,19 @@ public class StationCounter {
 
                 }
                 //Convert List to JSON String
-                System.out.println(stationData);
-                JSONArray = objectMapper.writeValueAsString(stationData);
-                services.add(new StationDataCollectorService(JSONArray));
+
+
+
+
+                // This is the main class for using Gson. Gson is typically used by first constructing a Gson instance and then invoking toJson(Object) or fromJson(String, Class) methods on it.
+                // Gson instances are Thread-safe so you can reuse them freely across multiple threads.
+                 JSONObject = gson.toJson(stationData);
+
+
+                services.add(new StationDataCollectorService(JSONObject));
 
             }
+
 
             connection.close();
             Executor executor = new Executor(services);

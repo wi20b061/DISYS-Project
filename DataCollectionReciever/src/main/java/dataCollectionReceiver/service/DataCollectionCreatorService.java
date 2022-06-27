@@ -12,6 +12,7 @@ public class DataCollectionCreatorService {
     public String execute() {
         //input is the data of one station
         String input = Consumer.receive(IN_QUEUE, 10000, Main.BROKER_URL);
+        System.out.println("in Consumer: "+input);
 
         return input;
     }
