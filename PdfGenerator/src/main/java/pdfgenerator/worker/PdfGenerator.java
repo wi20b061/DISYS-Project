@@ -7,6 +7,8 @@ import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
 import pdfgenerator.model.Charging;
+import pdfgenerator.model.Customer;
+import pdfgenerator.model.CustomerDataCollection;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -21,16 +23,19 @@ import java.util.List;
 //Resource: https://www.javatpoint.com/java-create-pdf
 
 public class PdfGenerator {
-    public void generatePdf(String fnameInput, String lnameInput, String addressInput, String zipInput, String countryInput, String invoiceIDInput, ArrayList<Charging> chargingsInput){
+    public void generatePdf(CustomerDataCollection customerDataCollection){
+
         //create pdf with data, safe it to file system
         //created PDF document instance
         //generate Testdata
-        String fname = "Fiona";
-        String lname = "Doe";
-        String address = "xyStreet 33";
-        String zip = "2342";
-        String country = "AT";
-        String invoiceID = "093023994jdfifß3-4595454";
+        Customer customer = customerDataCollection.getCustomer();
+        String fname = customer.getFname();
+        String lname = customer.getLname();
+        String address = customer.getAddress();
+        String zip = customer.getZip();
+        String country = customer.getCountry();
+        String invoiceID = customerDataCollection.getInvoiceID();
+        ArrayList<Charging> allChargings = customerDataCollection.getChargingData();
 
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
         LocalDateTime now = LocalDateTime.now();
