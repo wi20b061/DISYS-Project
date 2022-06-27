@@ -5,16 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04a5b097-3921-4cf9-ba5f-a2e9a27b8f9f" name="Changes" comment="stationDataCollector really finished this time">
-      <change afterPath="$PROJECT_DIR$/../DataCollectionReciever/src/main/java/dataCollectionReceiver/service/DataCollectionCreatorService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DataCollectionReciever/src/main/java/dataCollectionReceiver/worker/DataCollectionCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DataCollectionReciever/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DataCollectionReciever/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DataCollectionReciever/src/main/java/dataCollectionReceiver/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DataCollectionReciever/src/main/java/dataCollectionReceiver/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DataCollectionReciever/src/main/java/dataCollectionReceiver/service/DataCollectionProducerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DataCollectionReciever/src/main/java/dataCollectionReceiver/service/DataCollectionProducerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataCollectionReciever/src/main/java/dataCollectionReceiver/activeMQ/abstractservices/ConsumerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DataCollectionReciever/src/main/java/dataCollectionReceiver/activeMQ/abstractservices/ConsumerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataCollectionReciever/src/main/java/dataCollectionReceiver/service/DataCollectionCreatorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DataCollectionReciever/src/main/java/dataCollectionReceiver/service/DataCollectionCreatorService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataCollectionReciever/src/main/java/dataCollectionReceiver/service/DataCollectionProducerService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../DataCollectionReciever/src/main/java/dataCollectionReceiver/service/DataCollectionReceiverService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DataCollectionReciever/src/main/java/dataCollectionReceiver/service/DataCollectionReceiverService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DataCollectionReciever/src/main/java/dataCollectionReceiver/worker/DataCollectionReceiver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RESTECharging/src/main/java/com/example/restecharging/database/DatabaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RESTECharging/src/main/java/com/example/restecharging/database/DatabaseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataCollectionReciever/src/main/java/dataCollectionReceiver/worker/DataCollectionCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DataCollectionReciever/src/main/java/dataCollectionReceiver/worker/DataCollectionCreator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/stationDataCollector/database/DatabaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stationDataCollector/database/DatabaseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/stationDataCollector/worker/StationCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stationDataCollector/worker/StationCounter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +39,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../PizzaRestaurantDemo 2/PizzaRestaurantDemo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.29057592" />
@@ -77,6 +74,7 @@
       <updated>1656102030173</updated>
       <workItem from="1656102035300" duration="4457000" />
       <workItem from="1656155097885" duration="7905000" />
+      <workItem from="1656322775060" duration="3244000" />
     </task>
     <task id="LOCAL-00001" summary="stationDataCollector almost finished">
       <created>1656106512639</created>

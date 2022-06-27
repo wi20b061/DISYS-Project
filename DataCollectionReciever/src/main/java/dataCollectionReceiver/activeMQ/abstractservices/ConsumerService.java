@@ -21,8 +21,9 @@ public abstract class ConsumerService implements Runnable {
             }
 
             execute(input);
+
         }
     }
 
-    protected abstract void execute(String input);
+    protected abstract String execute(String input);
 }
