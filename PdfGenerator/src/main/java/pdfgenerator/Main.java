@@ -12,12 +12,14 @@ public class Main {
 
     public static void main(String[] args) {
 
-        List<Runnable> services = new ArrayList<>();
+       /* List<Runnable> services = new ArrayList<>();
 
         services.add(new PdfGeneratorService());
 
         Executor executor = new Executor(services);
         executor.start();
-
+*/
+        PdfGenerator pdfGenerator = new PdfGenerator();
+        pdfGenerator.generatePdf("sth");
     }
 }

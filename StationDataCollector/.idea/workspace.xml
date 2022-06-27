@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04a5b097-3921-4cf9-ba5f-a2e9a27b8f9f" name="Changes" comment="stationDataCollector really finished this time">
-      <change afterPath="$PROJECT_DIR$/../DataCollectionReciever/src/main/java/dataCollectionReceiver/model/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DataCollectionReciever/src/main/java/dataCollectionReceiver/model/Charging.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DataCollectionReciever/src/main/java/dataCollectionReceiver/model/Charging.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DataCollectionReciever/src/main/java/dataCollectionReceiver/model/CustomerDataCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DataCollectionReciever/src/main/java/dataCollectionReceiver/model/CustomerDataCollection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DataCollectionReciever/src/main/java/dataCollectionReceiver/service/DataCollectionCreatorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DataCollectionReciever/src/main/java/dataCollectionReceiver/service/DataCollectionCreatorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DataCollectionReciever/src/main/java/dataCollectionReceiver/worker/DataCollectionCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DataCollectionReciever/src/main/java/dataCollectionReceiver/worker/DataCollectionCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PdfGenerator/src/main/java/pdfgenerator/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PdfGenerator/src/main/java/pdfgenerator/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PdfGenerator/src/main/java/pdfgenerator/service/PdfGeneratorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PdfGenerator/src/main/java/pdfgenerator/service/PdfGeneratorService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PdfGenerator/src/main/java/pdfgenerator/worker/PdfGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PdfGenerator/src/main/java/pdfgenerator/worker/PdfGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +68,7 @@
       <updated>1656102030173</updated>
       <workItem from="1656102035300" duration="4457000" />
       <workItem from="1656155097885" duration="7905000" />
-      <workItem from="1656322775060" duration="18529000" />
+      <workItem from="1656322775060" duration="3244000" />
     </task>
     <task id="LOCAL-00001" summary="stationDataCollector almost finished">
       <created>1656106512639</created>
@@ -113,14 +105,7 @@
       <option name="project" value="LOCAL" />
       <updated>1656267810321</updated>
     </task>
-    <task id="LOCAL-00006" summary="stationDataCollector really finished this time">
-      <created>1656338725520</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1656338725520</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,7 +121,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="stationDataCollector almost finished" />

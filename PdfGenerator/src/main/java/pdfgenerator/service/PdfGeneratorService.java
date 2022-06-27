@@ -13,6 +13,8 @@ public class PdfGeneratorService extends ConsumerService {
         super(IN_QUEUE, Main.BROKER_URL);
     }
     protected void execute(String input) {
+
+
         pdfGenerator.generatePdf(input);
     }
 }
