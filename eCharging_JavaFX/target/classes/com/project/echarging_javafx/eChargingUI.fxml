@@ -19,7 +19,7 @@
                <Insets right="50.0" />
             </HBox.margin>
          </Button>
-         <Hyperlink fx:id="pdfLink" text="Pdf Download" textAlignment="RIGHT" visible="false" />
+         <Hyperlink fx:id="pdfLink" onAction="#onPdfLinkClick" text="Pdf Download" textAlignment="RIGHT" visible="false" />
       </children>
    </HBox>
 </VBox>
