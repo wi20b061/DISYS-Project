@@ -66,6 +66,7 @@ public class EChargingController {
         HashMap<String, String> receiverhashmap = new HashMap<>();
         receiverhashmap.put("stationQty", Integer.toString(stationIDs.size())); //{ "stationQty : 3",
         receiverhashmap.put("invoiceID", invoiceID); //"invoiceID" : "2353" }
+        receiverhashmap.put("customerID", String.valueOf(customerID));
         //Convert List to JSON String
         String receiverjson = null;
         try {

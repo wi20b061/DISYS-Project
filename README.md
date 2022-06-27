@@ -18,3 +18,5 @@ use jdbc-projekt;
 Start Active MQ in cmd:
 cd [filepath]\apache-activemq-5.17.1-bin\apache-activemq-5.17.1\bin
 activemq.bat start
+
+im Webbrowser: http://localhost:8161
