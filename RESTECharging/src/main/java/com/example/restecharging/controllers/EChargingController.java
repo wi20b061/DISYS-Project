@@ -87,15 +87,15 @@ public class EChargingController {
 
     @GetMapping(path = "/invoice/{invoiceID}")
     public String getInvoice(@PathVariable String invoiceID){
-        //try to find invoice 10 times - every 5 seconds, if no invoice-file was found return "not found"
-        for(int i=0; i<10;i++){
+        //try to find invoice 20 times - every 5 seconds, if no invoice-file was found return "not found"
+        for(int i=0; i<20;i++){
             //search for invoice at specified invoiceID-path (invoiceID=jobID)
             try {
-                File invoice = new File("DISYS_Projekt/invoices/" + invoiceID + ".pdf");
+                File invoice = new File("C:/Users/Fiona/IdeaProjects/DISYS_Projekt/invoices/" + invoiceID + ".pdf");
                 //File invoice = new File("C:/Users/Fiona/IdeaProjects/DISYS_Projekt/invoices/test.pdf"); //TESTING!
                 Scanner myReader = new Scanner(invoice);
                 //return path if file exists
-                return "DISYS_Projekt/invoices/" + invoiceID + ".pdf";
+                return "C:/Users/Fiona/IdeaProjects/DISYS_Projekt/invoices/" + invoiceID + ".pdf";
                 //return "C:/Users/Fiona/IdeaProjects/DISYS_Projekt/invoices/test.pdf"; //TESTING!
             } catch (Exception e) {
                 System.out.println("Invoice-pdf not found");
