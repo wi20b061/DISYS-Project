@@ -21,7 +21,7 @@ import java.util.List;
 //Resource: https://www.javatpoint.com/java-create-pdf
 
 public class PdfGenerator {
-    public void generatePdf(String input){
+    public void generatePdf(String fnameInput, String lnameInput, String addressInput, String zipInput, String countryInput, String invoiceIDInput, ArrayList<Charging> chargingsInput){
         //create pdf with data, safe it to file system
         //created PDF document instance
         //generate Testdata
