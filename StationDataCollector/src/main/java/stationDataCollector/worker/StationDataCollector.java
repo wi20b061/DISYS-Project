@@ -65,10 +65,10 @@ public class StationDataCollector {
                 preparedStatementRead.setInt(3, 1);
 
                 // charging isInInvoice auf 1 setzen
-                String queryUpdate = "UPDATE charging SET usedForInvoice=1 WHERE idcustomer=? AND idstation=? ";
+                String queryUpdate = "UPDATE charging SET usedForInvoice=? WHERE idcustomer=? AND idstation=? ";
                 PreparedStatement preparedStatementUpdate = connection.prepareStatement(queryUpdate);
-
-                preparedStatementUpdate.setInt(1, stationIDsInt.get(i));
+                preparedStatementUpdate.setInt(1, 1);
+                preparedStatementUpdate.setInt(3, stationIDsInt.get(i));
                 preparedStatementUpdate.setInt(2, idCustomer);
 
                 ResultSet resultSet = preparedStatementRead.executeQuery();

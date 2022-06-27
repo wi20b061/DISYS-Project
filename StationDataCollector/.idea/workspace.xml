@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04a5b097-3921-4cf9-ba5f-a2e9a27b8f9f" name="Changes" comment="stationDataCollector really finished this time">
-      <change beforePath="$PROJECT_DIR$/../DataCollectionReciever/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DataCollectionReciever/src/main/java/dataCollectionReceiver/database/DatabaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DataCollectionReciever/src/main/java/dataCollectionReceiver/database/DatabaseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RESTECharging/src/main/java/com/example/restecharging/controllers/EChargingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RESTECharging/src/main/java/com/example/restecharging/controllers/EChargingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RESTECharging/src/main/java/com/example/restecharging/database/DatabaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RESTECharging/src/main/java/com/example/restecharging/database/DatabaseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/stationDataCollector/database/DatabaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stationDataCollector/database/DatabaseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/stationDataCollector/worker/StationDataCollector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/stationDataCollector/worker/StationDataCollector.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
